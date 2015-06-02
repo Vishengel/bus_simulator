@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-import random
-import sys
 from manual import Manual
 from simulation import Simulation
 
@@ -28,17 +26,17 @@ if mode == 'm':
     numberOfCards = input("7 or 9? ")
     if numberOfCards != 7 and numberOfCards != 9:
       print("Holy fucking smoke, read the question dipshit...")
-    
+
   man = Manual(numberOfCards, continueWhenDeckIsEmpty)
   man.run()
-  
-if mode == 'a': 
+
+if mode == 'a':
   totalIterations = input("Enter total number of rounds: ")
   print ""
   print "Running simulation for 7 cards and %d iterations..." % totalIterations
   sim = Simulation(7, continueWhenDeckIsEmpty, totalIterations)
   sim.run()
-  
+
   print ""
   print "Running simulation for 9 cards and %d iterations..." % totalIterations
   sim = Simulation(9, continueWhenDeckIsEmpty, totalIterations)

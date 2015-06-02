@@ -1,28 +1,31 @@
-from suit import Suit
+from card import Card
 import random
 
 class CardDeck:
   'A class for a simple 52-card deck'
 
   def __init__(self):
-    self.deck = {'Clubs': Suit('clubs'), 'Diamonds': Suit('diamonds'), 'Hearts': Suit('hearts'), 'Spades': Suit('spades')}
+    #self.deck = {'Clubs': Suit('clubs'), 'Diamonds': Suit('diamonds'), 'Hearts': Suit('hearts'), 'Spades': Suit('spades')}
+    self.suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades']
+    self.deck = []
+
+    for i in self.suits:
+      for j in range(2,15):
+        self.deck.append(Card(i, j))
+
+    random.shuffle(self.deck)
 
   def drawCard(self):
-    while True:
-      randomsuit = random.choice(self.deck.keys())
-      if self.deck[randomsuit].getNumberOfCards() > 0:
-        break
-
-    return self.deck[randomsuit].drawCard()
+    return self.deck.pop()
 
   def getDeck(self):
     return self.deck
 
-  def getNumberOfCards(self):
-    sum = 0
+  def setDeck(self, deck):
+    self.deck = deck
 
-    for key, value in self.deck.iteritems():
-      sum += value.getNumberOfCards()
+  def getNumberOfCards(self):
+    return len(self.deck)
 
     return sum
 

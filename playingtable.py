@@ -48,5 +48,5 @@ class PlayingTable:
   def reshuffleDeck(self):
     self.deck = CardDeck()
     
-    for key, value in self.deck.getDeck().iteritems():
-      value.resetCards([c for c in value.getCards() if c.getType() not in self.getCardTypesOnTable()])
+    for c in self.deck.getDeck():
+      self.deck.setDeck( [c for c in self.deck.getDeck() if c.getType() not in self.getCardTypesOnTable()] )
