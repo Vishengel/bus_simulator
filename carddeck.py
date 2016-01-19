@@ -5,7 +5,6 @@ class CardDeck:
   'A class for a simple 52-card deck'
 
   def __init__(self):
-    #self.deck = {'Clubs': Suit('clubs'), 'Diamonds': Suit('diamonds'), 'Hearts': Suit('hearts'), 'Spades': Suit('spades')}
     self.suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades']
     self.deck = []
 
