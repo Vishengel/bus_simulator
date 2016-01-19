@@ -3,19 +3,18 @@ class Card:
 
   def __init__(self, suit, card):
     self.suit = suit
-    self.card = card
-    self.value = 0
+    self.value = card
 
-    if card == 'Jack':
-      self.value = 11
-    elif card == 'Queen':
-      self.value = 12
-    elif card == 'King':
-      self.value = 13
-    elif card == 'Ace':
-      self.value = 14
+    if card == 11:
+      self.card = 'Jack'
+    elif card == 12:
+      self.card = 'Queen'
+    elif card == 13:
+      self.card = 'King'
+    elif card == 14:
+      self.card = 'Ace'
     else:
-      self.value = card
+      self.card = card
 
   def getType(self):
     return (self.suit, self.card)
